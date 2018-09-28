@@ -27,6 +27,8 @@ public class ControllerCSV {
                 jb_nuevo_actionPerformed();
             else if(e.getSource() == viewCSV.jb_guardar)
                 jb_guardar_actionPerformed();
+            else if(e.getSource() == viewCSV.jb_primero)
+                jb_primero_actionPerformed();
         }
     };   
     /**
@@ -48,6 +50,7 @@ public class ControllerCSV {
         this.viewCSV = viewCSV;
         this.viewCSV.jb_niuevo.addActionListener(al);
         this.viewCSV.jb_guardar.addActionListener(al);
+        this.viewCSV.jb_primero.addActionListener(al);
         initComponents();
     }
     /**
@@ -63,10 +66,17 @@ public class ControllerCSV {
        else
            modelCSV.writeFile();
     }
+    public void jb_primero_actionPerformed(){
+       modelCSV.primero();
+    }
     /**
      * metodo que permite iniciar la aplicacion
      */
     public void initComponents(){
        this.viewCSV.setVisible(true);
+       modelCSV.readFile();
+       modelCSV.primero();
+       this.viewCSV.jtf_nombre.setText(modelCSV.getNombre());
+       this.viewCSV.jtf_email.setText(modelCSV.getEmail());
     }
 }

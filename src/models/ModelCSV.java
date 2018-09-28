@@ -11,6 +11,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Spliterator;
 import javax.swing.JOptionPane;
 /**
  * Clase que permite realizar las acciones de la aplicacion
@@ -20,6 +22,7 @@ public class ModelCSV {
     private String nombre;
     private String email;
     private String path = "C:\\archivos\\datos.csv";
+    ArrayList <String> contactos = new ArrayList <String>();
 
 
     public String getNombre() {
@@ -54,8 +57,8 @@ public void readFile(){
         try(FileReader file = new FileReader(path)){
             BufferedReader bufferedReader = new BufferedReader(file);
             while ((row = bufferedReader.readLine()) != null){
-                System.out.println(row);
-            }
+                contactos.add(row);  //la lista contiene sublistas, tomando valores de ambos lados 
+            }System.out.print(contactos);
             bufferedReader.close();
         }
     }
@@ -113,5 +116,16 @@ public void prueba2(){
     }
     email = String.valueOf(probar);
     System.out.println(email);
+}
+/**
+ * Este metodo permite abstraer datos de la lista de contactos de CSV, el cual podremos abstraer ambos datos
+ * y posteriormente separarlos
+ */
+public void primero(){
+    String uno = contactos.get(0);
+    String Dato[] = uno.split(",");
+    nombre = Dato[0];
+    email = Dato[1];
+    System.out.println(nombre);
 }
 }

@@ -35,11 +35,11 @@ public class ViewCSV extends javax.swing.JFrame {
         jb_guardar = new javax.swing.JButton();
         jp_titulo = new javax.swing.JPanel();
         jl_csv = new javax.swing.JLabel();
-        jp_desplazar = new javax.swing.JPanel();
-        javax.swing.JButton jb_primero = new javax.swing.JButton();
-        javax.swing.JButton jb_anterior = new javax.swing.JButton();
-        javax.swing.JButton jb_siguiente = new javax.swing.JButton();
-        javax.swing.JButton jb_ultimo = new javax.swing.JButton();
+        jp_botones = new javax.swing.JPanel();
+        jb_primero = new javax.swing.JButton();
+        jb_anterior = new javax.swing.JButton();
+        jb_siguiente = new javax.swing.JButton();
+        jb_ultimo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
@@ -85,31 +85,31 @@ public class ViewCSV extends javax.swing.JFrame {
 
         jb_ultimo.setText(">|");
 
-        javax.swing.GroupLayout jp_desplazarLayout = new javax.swing.GroupLayout(jp_desplazar);
-        jp_desplazar.setLayout(jp_desplazarLayout);
-        jp_desplazarLayout.setHorizontalGroup(
-            jp_desplazarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_desplazarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout jp_botonesLayout = new javax.swing.GroupLayout(jp_botones);
+        jp_botones.setLayout(jp_botonesLayout);
+        jp_botonesLayout.setHorizontalGroup(
+            jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jp_botonesLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addComponent(jb_primero)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jb_anterior)
-                .addGap(30, 30, 30)
+                .addGap(31, 31, 31)
                 .addComponent(jb_siguiente)
-                .addGap(30, 30, 30)
+                .addGap(33, 33, 33)
                 .addComponent(jb_ultimo)
-                .addGap(37, 37, 37))
+                .addGap(24, 24, 24))
         );
-        jp_desplazarLayout.setVerticalGroup(
-            jp_desplazarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jp_desplazarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jp_desplazarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jb_ultimo)
-                    .addComponent(jb_siguiente)
+        jp_botonesLayout.setVerticalGroup(
+            jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jp_botonesLayout.createSequentialGroup()
+                .addContainerGap(19, Short.MAX_VALUE)
+                .addGroup(jp_botonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_primero)
                     .addComponent(jb_anterior)
-                    .addComponent(jb_primero))
-                .addContainerGap(12, Short.MAX_VALUE))
+                    .addComponent(jb_siguiente)
+                    .addComponent(jb_ultimo))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -127,20 +127,20 @@ public class ViewCSV extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jtf_nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
                             .addComponent(jtf_email))
-                        .addGap(0, 42, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jp_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jb_niuevo, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(57, 57, 57)
                 .addComponent(jb_guardar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(36, 36, 36))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jp_desplazar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jp_botones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -156,13 +156,13 @@ public class ViewCSV extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jl_email)
                     .addComponent(jtf_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jp_desplazar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jp_botones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jb_guardar)
                     .addComponent(jb_niuevo))
-                .addGap(26, 26, 26))
+                .addGap(23, 23, 23))
         );
 
         pack();
@@ -204,12 +204,16 @@ public class ViewCSV extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton jb_anterior;
     public javax.swing.JButton jb_guardar;
     public javax.swing.JButton jb_niuevo;
+    public javax.swing.JButton jb_primero;
+    public javax.swing.JButton jb_siguiente;
+    public javax.swing.JButton jb_ultimo;
     private javax.swing.JLabel jl_csv;
     public javax.swing.JLabel jl_email;
     public javax.swing.JLabel jl_nombre;
-    private javax.swing.JPanel jp_desplazar;
+    public javax.swing.JPanel jp_botones;
     private javax.swing.JPanel jp_titulo;
     public javax.swing.JTextField jtf_email;
     public javax.swing.JTextField jtf_nombre;
