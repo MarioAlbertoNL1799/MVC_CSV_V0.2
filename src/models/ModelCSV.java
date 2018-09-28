@@ -21,6 +21,7 @@ import javax.swing.JOptionPane;
 public class ModelCSV {
     private String nombre;
     private String email;
+    private int inicio = 0;
     private String path = "C:\\archivos\\datos.csv";
     ArrayList <String> contactos = new ArrayList <String>();
 
@@ -122,10 +123,26 @@ public void prueba2(){
  * y posteriormente separarlos
  */
 public void primero(){
-    String uno = contactos.get(0);
+    String uno = contactos.get(inicio);
     String Dato[] = uno.split(",");
     nombre = Dato[0];
     email = Dato[1];
     System.out.println(nombre);
-}
+    }
+public void ultimo(){
+    int fin = (contactos.size()- 1);
+    String uno = contactos.get(fin);
+    String Dato[] = uno.split(",");
+    nombre = Dato[0];
+    email = Dato[1];
+    System.out.println(nombre);
+    }
+public void siguiente(){
+    int continuar = inicio;
+    String uno = contactos.get(continuar);
+    String Dato[] = uno.split(",");
+    nombre = Dato[0];
+    email = Dato[1];
+    System.out.println(nombre);
+    }
 }
