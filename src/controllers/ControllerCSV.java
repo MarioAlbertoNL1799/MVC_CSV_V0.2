@@ -31,6 +31,10 @@ public class ControllerCSV {
                 jb_primero_actionPerformed();
             else if(e.getSource() == viewCSV.jb_ultimo)
                 jb_ultimo_actionPerformed();
+            else if(e.getSource() == viewCSV.jb_siguiente)
+                jb_siguiente_actionPerformed();
+            else if(e.getSource() == viewCSV.jb_anterior)
+                jb_anterior_actionPerformed();
         }
     };   
     /**
@@ -54,6 +58,8 @@ public class ControllerCSV {
         this.viewCSV.jb_guardar.addActionListener(al);
         this.viewCSV.jb_primero.addActionListener(al);
         this.viewCSV.jb_ultimo.addActionListener(al);
+        this.viewCSV.jb_siguiente.addActionListener(al);
+        this.viewCSV.jb_anterior.addActionListener(al);
         initComponents();
     }
     /**
@@ -81,6 +87,20 @@ public class ControllerCSV {
     public void jb_ultimo_actionPerformed(){
        modelCSV.ultimo();
        mostrar();
+    }
+    /**
+     * Este metodo nos permite visualizar el siguiente registro de la lista guardada en CSV
+     */
+    public void jb_siguiente_actionPerformed(){
+        modelCSV.siguiente();
+        mostrar();
+    }
+    /**
+     * Este metodo nos permite visualizar el siguiente registro de la lista guardada en CSV
+     */
+    public void jb_anterior_actionPerformed(){
+        modelCSV.anterior();
+        mostrar();
     }
     /**
      * metodo que nos muestra los valores guardados en CSV y mostrarlos en las JTF

@@ -22,6 +22,7 @@ public class ModelCSV {
     private String nombre;
     private String email;
     private int inicio = 0;
+    private int actual;
     private String path = "C:\\archivos\\datos.csv";
     ArrayList <String> contactos = new ArrayList <String>();
 
@@ -124,22 +125,47 @@ public void prueba2(){
  */
 public void primero(){
     String uno = contactos.get(inicio);
+    actual = inicio;
     String Dato[] = uno.split(",");
     nombre = Dato[0];
     email = Dato[1];
     System.out.println(nombre);
     }
+/** 
+ * Este metodo nos permite abstraer el ultimo dato de la lista de contactos de CSV, el cual podremos 
+ * abstraer el nombre y email del ultimo registro con el cual se separara haciendo un split y sera guardado cada
+ * dato en su resperctivo valor(nombre y email).
+ */
 public void ultimo(){
     int fin = (contactos.size()- 1);
+    actual = fin;
     String uno = contactos.get(fin);
     String Dato[] = uno.split(",");
     nombre = Dato[0];
     email = Dato[1];
     System.out.println(nombre);
     }
+/**
+ * Este metodo nos permite abstraer el dato siguiente de la lista de CSV, el cual
+ * contiene un nombre y email, con ello se separara haciendo un split y se guardara cada dato la variable con el nombre de
+ * su respectivo valor (nombre y email)
+ */
 public void siguiente(){
-    int continuar = inicio;
-    String uno = contactos.get(continuar);
+    actual = actual + 1;
+    String uno = contactos.get(actual);
+    String Dato[] = uno.split(",");
+    nombre = Dato[0];
+    email = Dato[1];
+    System.out.println(nombre);
+    }
+/**
+ * Este metodo nos permite abstraer el dato anterior de la lista contenida en el CSV, el cual
+ * contiene un nombre y email, con ello se separara hacciendo un split y se guardara cada dato la variable con el nombre de
+ * su respectivo valor (nombre y email)
+ */
+public void anterior(){
+    actual = actual - 1;
+    String uno = contactos.get(actual);
     String Dato[] = uno.split(",");
     nombre = Dato[0];
     email = Dato[1];
