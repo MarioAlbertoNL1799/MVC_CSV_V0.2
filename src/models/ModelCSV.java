@@ -151,12 +151,16 @@ public void ultimo(){
  * su respectivo valor (nombre y email)
  */
 public void siguiente(){
+    if (actual > (contactos.size())){
     actual = actual + 1;
     String uno = contactos.get(actual);
     String Dato[] = uno.split(",");
     nombre = Dato[0];
     email = Dato[1];
     System.out.println(nombre);
+        }
+    else 
+        JOptionPane.showMessageDialog(null, "Este es el ultimo registro guardado");
     }
 /**
  * Este metodo nos permite abstraer el dato anterior de la lista contenida en el CSV, el cual
@@ -164,11 +168,15 @@ public void siguiente(){
  * su respectivo valor (nombre y email)
  */
 public void anterior(){
-    actual = actual - 1;
-    String uno = contactos.get(actual);
-    String Dato[] = uno.split(",");
-    nombre = Dato[0];
-    email = Dato[1];
-    System.out.println(nombre);
+    if (actual > 0){
+        actual = actual - 1;
+        String uno = contactos.get(actual);
+        String Dato[] = uno.split(",");
+        nombre = Dato[0];
+        email = Dato[1];
+        System.out.println(nombre);
+        }
+    else
+        JOptionPane.showMessageDialog(null, "Este es el primer registro guardado");
     }
 }
