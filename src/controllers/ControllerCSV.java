@@ -29,6 +29,8 @@ public class ControllerCSV {
                 jb_guardar_actionPerformed();
             else if(e.getSource() == viewCSV.jb_primero)
                 jb_primero_actionPerformed();
+            else if(e.getSource() == viewCSV.jb_ultimo)
+                jb_ultimo_actionPerformed();
         }
     };   
     /**
@@ -51,6 +53,7 @@ public class ControllerCSV {
         this.viewCSV.jb_niuevo.addActionListener(al);
         this.viewCSV.jb_guardar.addActionListener(al);
         this.viewCSV.jb_primero.addActionListener(al);
+        this.viewCSV.jb_ultimo.addActionListener(al);
         initComponents();
     }
     /**
@@ -58,7 +61,6 @@ public class ControllerCSV {
      * este vacio enviara un mensaje de error
      */
     public void jb_guardar_actionPerformed(){
-       modelCSV.readFile();
        modelCSV.setNombre(viewCSV.jtf_nombre.getText());
        modelCSV.setEmail(viewCSV.jtf_email.getText());
        if (modelCSV.getNombre().isEmpty() || modelCSV.getEmail().isEmpty())
@@ -66,8 +68,26 @@ public class ControllerCSV {
        else
            modelCSV.writeFile();
     }
+    /**
+     * Este modelo nos permite visualizar el primer elemento de la lista
+     */
     public void jb_primero_actionPerformed(){
        modelCSV.primero();
+       mostrar();
+    }
+    /**
+     * Este metodo nos permite visualizar el ultimo registro de la lista guardada en CSV
+     */
+    public void jb_ultimo_actionPerformed(){
+       modelCSV.ultimo();
+       mostrar();
+    }
+    /**
+     * metodo que nos muestra los valores guardados en CSV y mostrarlos en las JTF
+     */
+    public void mostrar(){
+       this.viewCSV.jtf_nombre.setText(modelCSV.getNombre());
+       this.viewCSV.jtf_email.setText(modelCSV.getEmail());
     }
     /**
      * metodo que permite iniciar la aplicacion
@@ -76,7 +96,6 @@ public class ControllerCSV {
        this.viewCSV.setVisible(true);
        modelCSV.readFile();
        modelCSV.primero();
-       this.viewCSV.jtf_nombre.setText(modelCSV.getNombre());
-       this.viewCSV.jtf_email.setText(modelCSV.getEmail());
+       mostrar();
     }
 }
