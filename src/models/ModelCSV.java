@@ -151,7 +151,7 @@ public void ultimo(){
  * su respectivo valor (nombre y email)
  */
 public void siguiente(){
-    if (actual > (contactos.size())){
+    if (actual < (contactos.size()-1)){
     actual = actual + 1;
     String uno = contactos.get(actual);
     String Dato[] = uno.split(",");
