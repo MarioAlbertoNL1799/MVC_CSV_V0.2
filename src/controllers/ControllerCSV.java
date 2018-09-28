@@ -45,6 +45,8 @@ public class ControllerCSV {
         modelCSV.setNombre(null);
         viewCSV.jtf_email.setText(null);
         modelCSV.setEmail(null);
+        this.viewCSV.jtf_email.setEditable(true);
+        this.viewCSV.jtf_nombre.setEditable(true);
     }
     /**
      * Constructor que permite la ejecucion del programa con sus acciones y la interaccion de vista y modelo
@@ -73,6 +75,10 @@ public class ControllerCSV {
            JOptionPane.showMessageDialog(null,"Campos vacios ingrese datos");
        else
            modelCSV.writeFile();
+           modelCSV.readFile();
+           modelCSV.ultimo();
+           this.viewCSV.jtf_email.setEditable(false);
+           this.viewCSV.jtf_nombre.setEditable(false);
     }
     /**
      * Este modelo nos permite visualizar el primer elemento de la lista
@@ -117,5 +123,7 @@ public class ControllerCSV {
        modelCSV.readFile();
        modelCSV.primero();
        mostrar();
+       this.viewCSV.jtf_email.setEditable(false);
+       this.viewCSV.jtf_nombre.setEditable(false);
     }
 }
