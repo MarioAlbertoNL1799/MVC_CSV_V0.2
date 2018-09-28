@@ -77,6 +77,7 @@ public class ControllerCSV {
            modelCSV.writeFile();
            modelCSV.readFile();
            modelCSV.ultimo();
+           mostrar();
            this.viewCSV.jtf_email.setEditable(false);
            this.viewCSV.jtf_nombre.setEditable(false);
     }
